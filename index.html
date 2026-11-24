@@ -142,10 +142,10 @@
       </div>
 
       <div class="space-y-1 pt-1">
-        <p class="text-[11px] uppercase tracking-[0.2em] text-pink-300 font-bold">Kỷ Niệm Đặc Biệt</p>
+        <p class="text-[11px] uppercase tracking-[0.2em] text-pink-300 font-bold">Kỷ Niệm Giữ Chuỗi</p>
         <h2 class="font-script text-3xl text-white">Long & Quý Thy</h2>
         <p class="text-xs text-gray-300">
-          Mất <strong class="text-pink-300">108 ngày</strong> đồng hành để chính thức chạm mốc <strong class="text-purple-300">100 chuỗi</strong>
+          Tròn <strong class="text-pink-300">108 ngày</strong> đồng hành để chính thức chạm mốc <strong class="text-purple-300">100 chuỗi</strong>
         </p>
       </div>
 
@@ -165,7 +165,7 @@
       </div>
 
       <div class="bg-white/5 rounded-2xl p-3 border border-white/10 text-xs text-pink-100/95 leading-relaxed italic">
-        "Có những hôm bận rộn suýt quên rep, suýt đứt chuỗi... nhưng tụi mình vẫn kịp giữ lại để ngày thứ 108 chính thức cán mốc 100. Mong hành trình này còn viết tiếp thật dài nhé Thy ✨"
+        "Có những hôm bận rộn quên rep, suýt đứt chuỗi... nhưng vẫn kịp cứu chuỗi để ngày thứ 108 chính thức cán mốc 100. Giữ lửa tiếp tới 365 nhé ✨"
       </div>
 
       <div class="space-y-2 pt-1">
@@ -232,7 +232,7 @@
 
       const btn = document.getElementById("ignite-btn");
       btn.disabled = true;
-      btn.textContent = "✨ Đang tua lại từng ngày bên nhau...";
+      btn.textContent = "✨ Đang tua lại hành trình giữ chuỗi...";
 
       const counterEl = document.getElementById("day-counter");
       const statusEl = document.getElementById("stage-status");
@@ -251,7 +251,7 @@
         let nextDelay = 52;
 
         if (day === 3) {
-          statusEl.textContent = "3 ngày đầu tiên — mình bắt đầu quen có nhau mỗi ngày ✨";
+          statusEl.textContent = "3 ngày đầu tiên — bắt đầu thói quen nhắn tin mỗi ngày ✨";
           stop1.setAttribute("stop-color", "#f59e0b");
           stop2.setAttribute("stop-color", "#fbbf24");
           stop3.setAttribute("stop-color", "#fef08a");
@@ -260,7 +260,7 @@
           highlightBadge("badge-3", "bg-amber-500/30 text-amber-300 border border-amber-400");
           nextDelay = 1350;
         } else if (day === 10) {
-          statusEl.textContent = "10 ngày trôi qua — chuyện trò thành thói quen lúc nào chẳng hay 🧡";
+          statusEl.textContent = "10 ngày trôi qua — câu chuyện mỗi ngày cứ thế dài thêm 🧡";
           stop1.setAttribute("stop-color", "#ea580c");
           stop2.setAttribute("stop-color", "#f97316");
           stop3.setAttribute("stop-color", "#fde047");
@@ -269,7 +269,7 @@
           highlightBadge("badge-10", "bg-orange-500/30 text-orange-300 border border-orange-400");
           nextDelay = 1350;
         } else if (day === 30) {
-          statusEl.textContent = "Tròn 30 chuỗi — chuyện trò với Thy đã thành một phần mỗi ngày ❤️‍🔥";
+          statusEl.textContent = "Tròn 30 chuỗi — cảm ơn vì đã duy trì thắp sáng ngọn lửa ne ❤️‍🔥";
           stop1.setAttribute("stop-color", "#be123c");
           stop2.setAttribute("stop-color", "#f43f5e");
           stop3.setAttribute("stop-color", "#fda4af");
@@ -279,8 +279,7 @@
           highlightBadge("badge-30", "bg-rose-500/30 text-rose-300 border border-rose-400");
           nextDelay = 1450;
         } else if (day === 65) {
-          // Điểm nhấn chân thật đoạn 30 -> 100
-          statusEl.textContent = "Có những hôm bận rộn suýt quên rep, suýt đứt chuỗi... nhưng tụi mình vẫn kịp giữ lại 🥹";
+          statusEl.textContent = "Có những hôm bận rộn quên rep, suýt đứt chuỗi...nhưng vẫn kịp cứu chuỗi";
           counterEl.style.transform = "scale(1)";
           nextDelay = 1650;
         } else if (day >= 92 && day < 100) {
@@ -295,7 +294,7 @@
           flameRing.style.borderColor = "rgba(192, 132, 252, 0.65)";
           counterEl.style.transform = "scale(1.18)";
           highlightBadge("badge-100", "bg-purple-500/35 text-purple-200 border border-purple-400");
-          statusEl.textContent = "Ngày thứ 108 (23/11) — chính thức cán mốc 100 chuỗi trọn vẹn bên nhau 💜";
+          statusEl.textContent = "Ngày thứ 108 (23/11) — chính thức cán mốc chuỗi 100 💜";
           launchFireworks();
 
           setTimeout(() => {
@@ -454,7 +453,7 @@
       ctx.fillStyle = "#f9a8d4";
       ctx.font = "800 32px 'Be Vietnam Pro', sans-serif";
       ctx.textAlign = "center";
-      ctx.fillText("108 DAYS TOGETHER • 100 STREAK", W / 2, 305);
+      ctx.fillText("108 DAYS STREAK • 100 MILESTONE", W / 2, 305);
 
       const numGrad = ctx.createLinearGradient(300, 380, 780, 540);
       numGrad.addColorStop(0, "#fb923c");
@@ -485,8 +484,8 @@
 
       ctx.fillStyle = "rgba(255, 255, 255, 0.85)";
       ctx.font = "500 30px 'Be Vietnam Pro', sans-serif";
-      ctx.fillText("Qua những ngày bận rộn suýt quên rep,", W / 2, 1330);
-      ctx.fillText("tụi mình vẫn kịp giữ lửa để cán mốc 100 ✨", W / 2, 1385);
+      ctx.fillText("Có những hôm bận rộn quên rep, suýt đứt chuỗi...", W / 2, 1330);
+      ctx.fillText("nhưng vẫn kịp cứu chuỗi để cán mốc 100 ✨", W / 2, 1385);
 
       ctx.fillStyle = "#c084fc";
       ctx.font = "700 28px 'Be Vietnam Pro', sans-serif";
