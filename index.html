@@ -92,6 +92,14 @@
           Ngọn lửa bắt đầu từ 08/08...
         </p>
       </div>
+
+      <!-- 4 Cột mốc chuẩn TikTok: 3 - 10 - 30 - 100 -->
+      <div class="flex items-center justify-center gap-2 mt-4">
+        <span id="badge-3" class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-white/5 text-gray-400 border border-white/10 transition-all">🔥 3</span>
+        <span id="badge-10" class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-white/5 text-gray-400 border border-white/10 transition-all">🧡 10</span>
+        <span id="badge-30" class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-white/5 text-gray-400 border border-white/10 transition-all">❤️‍🔥 30</span>
+        <span id="badge-100" class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-white/5 text-gray-400 border border-white/10 transition-all">💜 100</span>
+      </div>
     </div>
 
     <div class="w-full space-y-3">
@@ -210,6 +218,11 @@
       setTimeout(() => ember.remove(), 1400);
     }
 
+    function highlightBadge(id, classes) {
+      const el = document.getElementById(id);
+      if (el) el.className = "px-2.5 py-1 rounded-full text-[11px] font-extrabold transition-all scale-110 " + classes;
+    }
+
     function startStreakCelebration() {
       if (isAnimating) return;
       isAnimating = true;
@@ -236,27 +249,33 @@
         day += 1;
         counterEl.textContent = String(day).padStart(3, "0");
 
-        if (day === 10) {
-          statusEl.textContent = "🔥 Mốc 10 ngày: Lửa bắt đầu bùng lên!";
-          flameSvg.style.transform = "scale(1.1)";
+        if (day === 3) {
+          statusEl.textContent = "🔥 Mốc 3 ngày: Chính thức lên lửa chuỗi!";
+          flameSvg.style.transform = "scale(1.06)";
+          highlightBadge("badge-3", "bg-amber-500/25 text-amber-300 border border-amber-400/50");
+        } else if (day === 10) {
+          statusEl.textContent = "🧡 Mốc 10 ngày: Lửa Cam rực sáng!";
+          stop1.setAttribute("stop-color", "#ea580c");
+          stop2.setAttribute("stop-color", "#f97316");
+          stop3.setAttribute("stop-color", "#fde047");
+          flameSvg.style.transform = "scale(1.15)";
+          highlightBadge("badge-10", "bg-orange-500/25 text-orange-300 border border-orange-400/50");
         } else if (day === 30) {
-          statusEl.textContent = "❤️‍🔥 Mốc 30 ngày: Lửa Đỏ rực cháy!";
+          statusEl.textContent = "❤️‍🔥 Mốc 30 ngày: Chuyển sắc Lửa Đỏ cực cháy!";
           stop1.setAttribute("stop-color", "#be123c");
           stop2.setAttribute("stop-color", "#f43f5e");
           stop3.setAttribute("stop-color", "#fda4af");
-          flameSvg.style.transform = "scale(1.22)";
-        } else if (day === 70) {
-          statusEl.textContent = "💜 Mốc 70 ngày: Chuyển sắc Tím Huyền Thoại...";
+          flameSvg.style.transform = "scale(1.25)";
+          highlightBadge("badge-30", "bg-rose-500/25 text-rose-300 border border-rose-400/50");
+        } else if (day >= 100) {
+          clearInterval(countTimer);
+          clearInterval(emberTimer);
           stop1.setAttribute("stop-color", "#7e22ce");
           stop2.setAttribute("stop-color", "#ec4899");
           stop3.setAttribute("stop-color", "#f5d0fe");
-          flameSvg.style.transform = "scale(1.32)";
-        }
-
-        if (day >= 100) {
-          clearInterval(countTimer);
-          clearInterval(emberTimer);
-          statusEl.textContent = "🎉 CHÍNH THỨC CHẠM MỐC 100 NGÀY (23/11)!";
+          flameSvg.style.transform = "scale(1.36)";
+          highlightBadge("badge-100", "bg-purple-500/30 text-purple-200 border border-purple-400/60");
+          statusEl.textContent = "💜 MỐC 100 NGÀY: LỬA TÍM HUYỀN THOẠI (23/11)!";
           launchFireworks();
 
           setTimeout(() => {
@@ -273,7 +292,7 @@
               launchFireworks();
               isAnimating = false;
             }, 600);
-          }, 1500);
+          }, 1600);
         }
       }, 36);
     }
@@ -285,6 +304,14 @@
       document.getElementById("day-counter").textContent = "001";
       document.getElementById("stage-status").textContent = "Ngọn lửa bắt đầu từ 08/08...";
       document.getElementById("flame-svg").style.transform = "scale(1)";
+      document.getElementById("grad-stop-1").setAttribute("stop-color", "#f97316");
+      document.getElementById("grad-stop-2").setAttribute("stop-color", "#ef4444");
+      document.getElementById("grad-stop-3").setAttribute("stop-color", "#fde047");
+
+      ["badge-3", "badge-10", "badge-30", "badge-100"].forEach(id => {
+        document.getElementById(id).className = "px-2.5 py-1 rounded-full text-[11px] font-bold bg-white/5 text-gray-400 border border-white/10 transition-all";
+      });
+
       btn.disabled = false;
       btn.textContent = "🔥 Chạm Để Thắp Sáng Chuỗi 100";
 
@@ -410,7 +437,6 @@
       ctx.font = "800 42px 'Be Vietnam Pro', sans-serif";
       ctx.fillText("DAYS STREAK", W / 2, 580);
 
-      // Vẽ 3 tấm ảnh kỷ niệm ngang hàng
       const p1 = document.getElementById("photo-1");
       const p2 = document.getElementById("photo-2");
       const p3 = document.getElementById("photo-3");
