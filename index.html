@@ -60,7 +60,7 @@
   <section id="stage-ignite" class="relative z-20 w-full max-w-md min-h-screen flex flex-col items-center justify-between py-12 px-6 text-center transition-all duration-700">
     <div class="space-y-2">
       <span class="inline-block px-3.5 py-1 rounded-full bg-orange-500/15 border border-orange-400/30 text-orange-300 text-xs font-extrabold tracking-wider uppercase">
-        TikTok Streak Milestone
+        100 Days Together
       </span>
       <h1 class="text-2xl sm:text-3xl font-black tracking-tight bg-gradient-to-r from-amber-200 via-pink-300 to-purple-300 bg-clip-text text-transparent">
         Hành Trình 100 Ngày
@@ -68,7 +68,7 @@
       <p class="text-xs text-gray-400 font-medium">08/08 ➔ 23/11 • Long & Quý Thy</p>
     </div>
 
-    <div class="relative flex flex-col items-center justify-center my-auto">
+    <div class="relative flex flex-col items-center justify-center my-auto w-full">
       <div id="flame-ring" class="relative w-52 h-52 rounded-full flex items-center justify-center bg-gradient-to-b from-orange-500/10 to-purple-600/10 border border-white/10 transition-all duration-500">
         <svg id="flame-svg" viewBox="0 0 120 140" class="w-28 h-32 flame-pulse transition-transform duration-500">
           <defs>
@@ -83,18 +83,18 @@
         </svg>
       </div>
 
-      <div class="mt-5">
+      <div class="mt-5 px-2">
         <div class="flex items-baseline justify-center gap-1.5">
           <span id="day-counter" class="text-6xl font-black tracking-tighter bg-gradient-to-r from-orange-400 via-rose-400 to-purple-400 bg-clip-text text-transparent transition-transform duration-300">001</span>
           <span class="text-sm font-extrabold text-gray-300 uppercase tracking-widest">Ngày</span>
         </div>
-        <p id="stage-status" class="text-xs text-pink-300/90 font-semibold mt-1.5 min-h-[20px]">
-          Ngọn lửa bắt đầu từ 08/08...
+        <p id="stage-status" class="text-xs sm:text-sm text-pink-200 font-semibold mt-2 min-h-[40px] leading-relaxed">
+          Từ một tin nhắn nhỏ ngày 08/08...
         </p>
       </div>
 
-      <!-- Đúng 4 Cột mốc chuẩn TikTok: 3 - 10 - 30 - 100 -->
-      <div class="flex items-center justify-center gap-2.5 mt-4">
+      <!-- 4 Cột mốc: 3 - 10 - 30 - 100 -->
+      <div class="flex items-center justify-center gap-2.5 mt-3">
         <span id="badge-3" class="px-3 py-1 rounded-full text-xs font-bold bg-white/5 text-gray-400 border border-white/10 transition-all duration-300">🔥 3</span>
         <span id="badge-10" class="px-3 py-1 rounded-full text-xs font-bold bg-white/5 text-gray-400 border border-white/10 transition-all duration-300">🧡 10</span>
         <span id="badge-30" class="px-3 py-1 rounded-full text-xs font-bold bg-white/5 text-gray-400 border border-white/10 transition-all duration-300">❤️‍🔥 30</span>
@@ -108,7 +108,7 @@
         onclick="startStreakCelebration()"
         class="w-full py-4 rounded-2xl bg-gradient-to-r from-orange-500 via-rose-500 to-purple-600 text-white font-extrabold text-sm tracking-wide shadow-[0_10px_35px_rgba(244,63,94,0.45)] active:scale-95 transition-all"
       >
-        🔥 Chạm Để Thắp Sáng Chuỗi 100
+        ✨ Chạm Để Nhìn Lại 100 Ngày
       </button>
       <p class="text-[11px] text-gray-400">
         Gợi ý: Bật quay màn hình trước khi chạm để đăng Nhật ký nhé!
@@ -123,9 +123,9 @@
       <div class="absolute -bottom-20 -right-20 w-44 h-44 bg-purple-600/25 rounded-full blur-3xl pointer-events-none"></div>
 
       <div class="flex items-center justify-between text-[11px] font-bold text-pink-200/80 border-b border-white/10 pb-2.5">
-        <span>✨ STREAK CERTIFICATE</span>
+        <span>✨ 100 DAYS MEMORY</span>
         <span class="px-2.5 py-0.5 rounded-full bg-purple-500/30 border border-purple-400/40 text-purple-200">
-          🔥 100 DAYS VIP
+          🔥 100 NGÀY BÊN NHAU
         </span>
       </div>
 
@@ -142,30 +142,30 @@
       </div>
 
       <div class="space-y-1 pt-1">
-        <p class="text-[11px] uppercase tracking-[0.2em] text-pink-300 font-bold">Chứng Nhận Kỷ Lục</p>
+        <p class="text-[11px] uppercase tracking-[0.2em] text-pink-300 font-bold">Kỷ Niệm Đặc Biệt</p>
         <h2 class="font-script text-3xl text-white">Long & Quý Thy</h2>
         <p class="text-xs text-gray-300">
-          Đã cùng nhau giữ ngọn lửa không tắt suốt <strong class="text-pink-300">100 ngày liên tiếp</strong>
+          100 ngày chẳng dài, nhưng đủ để mỗi ngày đều trở nên đặc biệt hơn
         </p>
       </div>
 
       <div class="grid grid-cols-3 gap-2 bg-black/30 rounded-2xl p-2.5 border border-white/10">
         <div>
-          <p class="text-[10px] text-gray-400 uppercase">Bắt đầu</p>
+          <p class="text-[10px] text-gray-400 uppercase">Ngày bắt đầu</p>
           <p class="text-xs font-extrabold text-orange-300 mt-0.5">08 / 08</p>
         </div>
         <div class="border-x border-white/10">
-          <p class="text-[10px] text-gray-400 uppercase">Cột mốc</p>
+          <p class="text-[10px] text-gray-400 uppercase">Hành trình</p>
           <p class="text-sm font-black text-pink-400 mt-0.5">100 🔥</p>
         </div>
         <div>
-          <p class="text-[10px] text-gray-400 uppercase">Chạm đỉnh</p>
+          <p class="text-[10px] text-gray-400 uppercase">Ngày tròn 100</p>
           <p class="text-xs font-extrabold text-purple-300 mt-0.5">23 / 11</p>
         </div>
       </div>
 
-      <div class="bg-white/5 rounded-2xl p-3 border border-white/10 text-xs text-pink-100/90 leading-relaxed italic">
-        "100 ngày nhắn tin không sót một ngày nào. Mong chuỗi này sẽ còn kéo dài tới 365 ngày và nhiều năm sau nữa nhé Thy ✨"
+      <div class="bg-white/5 rounded-2xl p-3 border border-white/10 text-xs text-pink-100/95 leading-relaxed italic">
+        "100 ngày giữ trọn từng câu chuyện nhỏ, chưa một hôm nào lỡ nhịp. Mong hành trình của tụi mình sẽ còn kéo dài tới 365 ngày và thật nhiều năm sau nữa nhé Thy ✨"
       </div>
 
       <div class="space-y-2 pt-1">
@@ -173,13 +173,13 @@
           onclick="downloadStoryCard()"
           class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 text-white font-extrabold text-xs sm:text-sm shadow-lg active:scale-95 transition-all"
         >
-          ⬇️ Tải Ảnh Thẻ 100 Ngày (Chuẩn Story 9:16)
+          ⬇️ Tải Ảnh Kỷ Niệm 100 Ngày (Chuẩn Story 9:16)
         </button>
         <button
           onclick="replayEffect()"
           class="w-full py-2.5 rounded-2xl bg-white/10 hover:bg-white/15 text-gray-200 font-bold text-xs transition-all"
         >
-          🔄 Xem lại hiệu ứng thắp lửa
+          🔄 Xem lại hành trình 100 ngày
         </button>
       </div>
     </div>
@@ -232,7 +232,7 @@
 
       const btn = document.getElementById("ignite-btn");
       btn.disabled = true;
-      btn.textContent = "🔥 Đang thắp sáng kỷ lục 100 ngày...";
+      btn.textContent = "✨ Đang tua lại từng ngày bên nhau...";
 
       const counterEl = document.getElementById("day-counter");
       const statusEl = document.getElementById("stage-status");
@@ -248,31 +248,28 @@
       function stepDay() {
         counterEl.textContent = String(day).padStart(3, "0");
 
-        let nextDelay = 48; // Tốc độ đếm bình thường
+        let nextDelay = 48;
 
         if (day === 3) {
-          // Chậm lại tại mốc 3
-          statusEl.textContent = "🔥 Mốc 3 ngày: Chính thức lên lửa chuỗi!";
+          statusEl.textContent = "3 ngày đầu tiên — mình bắt đầu quen có nhau mỗi ngày ✨";
           stop1.setAttribute("stop-color", "#f59e0b");
           stop2.setAttribute("stop-color", "#fbbf24");
           stop3.setAttribute("stop-color", "#fef08a");
           flameSvg.style.transform = "scale(1.08)";
           counterEl.style.transform = "scale(1.12)";
           highlightBadge("badge-3", "bg-amber-500/30 text-amber-300 border border-amber-400");
-          nextDelay = 1100; // Dừng 1.1 giây cho rõ mốc 3
+          nextDelay = 1250;
         } else if (day === 10) {
-          // Chậm lại tại mốc 10
-          statusEl.textContent = "🧡 Mốc 10 ngày: Lửa Cam rực sáng!";
+          statusEl.textContent = "10 ngày trôi qua — chuyện trò thành thói quen lúc nào chẳng hay 🧡";
           stop1.setAttribute("stop-color", "#ea580c");
           stop2.setAttribute("stop-color", "#f97316");
           stop3.setAttribute("stop-color", "#fde047");
           flameSvg.style.transform = "scale(1.18)";
           counterEl.style.transform = "scale(1.12)";
           highlightBadge("badge-10", "bg-orange-500/30 text-orange-300 border border-orange-400");
-          nextDelay = 1100; // Dừng 1.1 giây cho rõ mốc 10
+          nextDelay = 1250;
         } else if (day === 30) {
-          // Chậm lại tại mốc 30
-          statusEl.textContent = "❤️‍🔥 Mốc 30 ngày: Chuyển sắc Lửa Đỏ cực cháy!";
+          statusEl.textContent = "Tròn 1 tháng đồng hành — cảm ơn Thy vì chưa từng bỏ lỡ ngày nào ❤️‍🔥";
           stop1.setAttribute("stop-color", "#be123c");
           stop2.setAttribute("stop-color", "#f43f5e");
           stop3.setAttribute("stop-color", "#fda4af");
@@ -280,13 +277,11 @@
           flameRing.style.borderColor = "rgba(244, 63, 94, 0.45)";
           counterEl.style.transform = "scale(1.12)";
           highlightBadge("badge-30", "bg-rose-500/30 text-rose-300 border border-rose-400");
-          nextDelay = 1200; // Dừng 1.2 giây cho rõ mốc 30
+          nextDelay = 1350;
         } else if (day >= 92 && day < 100) {
-          // Giảm tốc độ nhẹ những ngày sát 100 để tạo cảm giác hồi hộp
           counterEl.style.transform = "scale(1)";
           nextDelay = 110;
         } else if (day === 100) {
-          // Dừng hẳn tại mốc 100 rực rỡ
           clearInterval(emberTimer);
           stop1.setAttribute("stop-color", "#7e22ce");
           stop2.setAttribute("stop-color", "#ec4899");
@@ -295,7 +290,7 @@
           flameRing.style.borderColor = "rgba(192, 132, 252, 0.65)";
           counterEl.style.transform = "scale(1.18)";
           highlightBadge("badge-100", "bg-purple-500/35 text-purple-200 border border-purple-400");
-          statusEl.textContent = "💜 MỐC 100 NGÀY: LỬA TÍM HUYỀN THOẠI (23/11)!";
+          statusEl.textContent = "100 ngày trọn vẹn (23/11) — mong hành trình của tụi mình còn viết tiếp thật dài 💜";
           launchFireworks();
 
           setTimeout(() => {
@@ -312,7 +307,7 @@
               launchFireworks();
               isAnimating = false;
             }, 600);
-          }, 2400);
+          }, 2600);
           return;
         } else {
           counterEl.style.transform = "scale(1)";
@@ -332,7 +327,7 @@
       const counterEl = document.getElementById("day-counter");
       counterEl.textContent = "001";
       counterEl.style.transform = "scale(1)";
-      document.getElementById("stage-status").textContent = "Ngọn lửa bắt đầu từ 08/08...";
+      document.getElementById("stage-status").textContent = "Từ một tin nhắn nhỏ ngày 08/08...";
       document.getElementById("flame-svg").style.transform = "scale(1)";
       document.getElementById("flame-ring").style.borderColor = "rgba(255, 255, 255, 0.1)";
       document.getElementById("grad-stop-1").setAttribute("stop-color", "#9ca3af");
@@ -344,7 +339,7 @@
       });
 
       btn.disabled = false;
-      btn.textContent = "🔥 Chạm Để Thắp Sáng Chuỗi 100";
+      btn.textContent = "✨ Chạm Để Nhìn Lại 100 Ngày";
 
       stage2.style.opacity = "0";
       setTimeout(() => {
@@ -454,7 +449,7 @@
       ctx.fillStyle = "#f9a8d4";
       ctx.font = "800 32px 'Be Vietnam Pro', sans-serif";
       ctx.textAlign = "center";
-      ctx.fillText("TIKTOK STREAK MILESTONE • VIP", W / 2, 305);
+      ctx.fillText("100 DAYS MEMORY • LONG & QUÝ THY", W / 2, 305);
 
       const numGrad = ctx.createLinearGradient(300, 380, 780, 540);
       numGrad.addColorStop(0, "#fb923c");
@@ -466,7 +461,7 @@
 
       ctx.fillStyle = "#ffffff";
       ctx.font = "800 42px 'Be Vietnam Pro', sans-serif";
-      ctx.fillText("DAYS STREAK", W / 2, 580);
+      ctx.fillText("DAYS TOGETHER", W / 2, 580);
 
       const p1 = document.getElementById("photo-1");
       const p2 = document.getElementById("photo-2");
@@ -483,17 +478,17 @@
       ctx.font = "700 38px 'Be Vietnam Pro', sans-serif";
       ctx.fillText("08 / 08  ➔  23 / 11", W / 2, 1215);
 
-      ctx.fillStyle = "rgba(255, 255, 255, 0.78)";
+      ctx.fillStyle = "rgba(255, 255, 255, 0.82)";
       ctx.font = "500 32px 'Be Vietnam Pro', sans-serif";
-      ctx.fillText("100 ngày nhắn tin không tắt lửa.", W / 2, 1335);
-      ctx.fillText("Mong chuỗi này sẽ còn kéo dài thật lâu ✨", W / 2, 1390);
+      ctx.fillText("100 ngày giữ trọn từng câu chuyện nhỏ.", W / 2, 1335);
+      ctx.fillText("Mong hành trình này sẽ còn viết tiếp thật dài ✨", W / 2, 1390);
 
       ctx.fillStyle = "#c084fc";
       ctx.font = "700 28px 'Be Vietnam Pro', sans-serif";
       ctx.fillText("♪ Chờ Một Người - Captain Boy", W / 2, 1575);
 
       const link = document.createElement("a");
-      link.download = "Ky_Niem_Chuoi_100_Long_Thy.png";
+      link.download = "Ky_Niem_100_Ngay_Long_Thy.png";
       link.href = canvas.toDataURL("image/png");
       link.click();
     }
