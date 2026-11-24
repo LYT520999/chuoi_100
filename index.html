@@ -18,7 +18,6 @@
     }
     .font-script { font-family: 'Pacifico', cursive; }
 
-    /* Hiệu ứng hào quang ngọn lửa */
     @keyframes pulseGlow {
       0%, 100% { transform: scale(1); filter: drop-shadow(0 0 25px rgba(249, 115, 22, 0.7)); }
       50% { transform: scale(1.08); filter: drop-shadow(0 0 45px rgba(236, 72, 153, 0.95)); }
@@ -38,7 +37,6 @@
       animation: floatUp 1.4s ease-out forwards;
     }
 
-    /* Viền thẻ VIP chuyển sắc */
     .vip-border {
       background: linear-gradient(145deg, rgba(255,255,255,0.14), rgba(255,255,255,0.03));
       border: 1.5px solid rgba(244, 114, 182, 0.45);
@@ -48,13 +46,11 @@
 </head>
 <body class="flex flex-col items-center justify-center relative">
 
-  <!-- Canvas pháo hoa nền -->
   <canvas id="fx-canvas" class="fixed inset-0 pointer-events-none z-10"></canvas>
 
   <!-- Nhạc nền đoạn Captain Boy -->
   <audio id="bg-music" src="cho_mot_nguoi_captain.mp3" loop preload="auto"></audio>
 
-  <!-- Nút bật/tắt nhạc góc trên -->
   <button id="music-btn" onclick="toggleMusic()" class="hidden fixed top-4 right-4 z-30 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-bold text-pink-200 flex items-center gap-1.5 shadow-lg">
     <span id="music-icon">🎵</span>
     <span id="music-text">Captain Boy • Đang phát</span>
@@ -72,10 +68,8 @@
       <p class="text-xs text-gray-400 font-medium">08/08 ➔ 23/11 • Long & Quý Thy</p>
     </div>
 
-    <!-- Khu vực ngọn lửa tương tác -->
     <div class="relative flex flex-col items-center justify-center my-auto">
       <div id="flame-ring" class="relative w-52 h-52 rounded-full flex items-center justify-center bg-gradient-to-b from-orange-500/10 to-purple-600/10 border border-white/10">
-        <!-- SVG Ngọn lửa đổi màu -->
         <svg id="flame-svg" viewBox="0 0 120 140" class="w-28 h-32 flame-pulse transition-transform duration-300">
           <defs>
             <linearGradient id="flameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
@@ -89,7 +83,6 @@
         </svg>
       </div>
 
-      <!-- Bộ đếm ngày -->
       <div class="mt-5">
         <div class="flex items-baseline justify-center gap-1.5">
           <span id="day-counter" class="text-6xl font-black tracking-tighter bg-gradient-to-r from-orange-400 via-rose-400 to-purple-400 bg-clip-text text-transparent">001</span>
@@ -101,7 +94,6 @@
       </div>
     </div>
 
-    <!-- Nút thắp lửa -->
     <div class="w-full space-y-3">
       <button
         id="ignite-btn"
@@ -118,42 +110,39 @@
 
   <!-- ================= MÀN 2: THẺ CHỨNG NHẬN VIP 100 NGÀY ================= -->
   <section id="stage-card" class="hidden relative z-20 w-full max-w-md min-h-screen flex-col items-center justify-center py-8 px-5 opacity-0 transition-opacity duration-700">
-    <div class="w-full vip-border backdrop-blur-xl rounded-[32px] p-6 text-center space-y-5 relative overflow-hidden">
-      <!-- Dải sáng trang trí -->
+    <div class="w-full vip-border backdrop-blur-xl rounded-[32px] p-5 text-center space-y-4 relative overflow-hidden">
       <div class="absolute -top-20 -left-20 w-44 h-44 bg-pink-500/20 rounded-full blur-3xl pointer-events-none"></div>
       <div class="absolute -bottom-20 -right-20 w-44 h-44 bg-purple-600/25 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div class="flex items-center justify-between text-[11px] font-bold text-pink-200/80 border-b border-white/10 pb-3">
+      <div class="flex items-center justify-between text-[11px] font-bold text-pink-200/80 border-b border-white/10 pb-2.5">
         <span>✨ STREAK CERTIFICATE</span>
         <span class="px-2.5 py-0.5 rounded-full bg-purple-500/30 border border-purple-400/40 text-purple-200">
           🔥 100 DAYS VIP
         </span>
       </div>
 
-      <!-- Ảnh kỷ niệm -->
-      <div class="relative mx-auto w-32 h-32 rounded-full p-1 bg-gradient-to-tr from-orange-400 via-pink-500 to-purple-500 shadow-xl">
-        <img
-          id="couple-photo"
-          src="chu_chau.jpg"
-          onerror="this.src='anh_dac_biet.png'"
-          alt="Long & Quý Thy"
-          class="w-full h-full object-cover rounded-full bg-gray-900"
-        />
-        <span class="absolute -bottom-1 -right-1 w-9 h-9 rounded-full bg-gradient-to-r from-rose-500 to-purple-600 flex items-center justify-center text-base shadow-lg border-2 border-[#160b24]">
-          🔥
-        </span>
+      <!-- Khung 3 ảnh kỷ niệm (anh1.png, anh2.png, anh3.png) -->
+      <div class="grid grid-cols-3 gap-2 pt-1">
+        <div class="aspect-[3/4] rounded-2xl p-0.5 bg-gradient-to-b from-orange-400 to-pink-500 shadow-lg overflow-hidden -rotate-2">
+          <img id="photo-1" src="anh1.png" alt="Kỷ niệm 1" class="w-full h-full object-cover rounded-[14px] bg-gray-900" />
+        </div>
+        <div class="aspect-[3/4] rounded-2xl p-0.5 bg-gradient-to-b from-pink-500 to-purple-500 shadow-xl overflow-hidden scale-105 z-10">
+          <img id="photo-2" src="anh2.png" alt="Kỷ niệm 2" class="w-full h-full object-cover rounded-[14px] bg-gray-900" />
+        </div>
+        <div class="aspect-[3/4] rounded-2xl p-0.5 bg-gradient-to-b from-purple-500 to-rose-500 shadow-lg overflow-hidden rotate-2">
+          <img id="photo-3" src="anh3.png" alt="Kỷ niệm 3" class="w-full h-full object-cover rounded-[14px] bg-gray-900" />
+        </div>
       </div>
 
-      <div class="space-y-1">
-        <p class="text-xs uppercase tracking-[0.2em] text-pink-300 font-bold">Chứng Nhận Kỷ Lục</p>
+      <div class="space-y-1 pt-1">
+        <p class="text-[11px] uppercase tracking-[0.2em] text-pink-300 font-bold">Chứng Nhận Kỷ Lục</p>
         <h2 class="font-script text-3xl text-white">Long & Quý Thy</h2>
-        <p class="text-xs text-gray-300 pt-1">
+        <p class="text-xs text-gray-300">
           Đã cùng nhau giữ ngọn lửa không tắt suốt <strong class="text-pink-300">100 ngày liên tiếp</strong>
         </p>
       </div>
 
-      <!-- Bảng thông số cột mốc -->
-      <div class="grid grid-cols-3 gap-2 bg-black/30 rounded-2xl p-3 border border-white/10">
+      <div class="grid grid-cols-3 gap-2 bg-black/30 rounded-2xl p-2.5 border border-white/10">
         <div>
           <p class="text-[10px] text-gray-400 uppercase">Bắt đầu</p>
           <p class="text-xs font-extrabold text-orange-300 mt-0.5">08 / 08</p>
@@ -168,13 +157,11 @@
         </div>
       </div>
 
-      <!-- Lời nhắn ngắn -->
-      <div class="bg-white/5 rounded-2xl p-3.5 border border-white/10 text-xs text-pink-100/90 leading-relaxed italic">
+      <div class="bg-white/5 rounded-2xl p-3 border border-white/10 text-xs text-pink-100/90 leading-relaxed italic">
         "100 ngày nhắn tin không sót một ngày nào. Mong chuỗi này sẽ còn kéo dài tới 365 ngày và nhiều năm sau nữa nhé Thy ✨"
       </div>
 
-      <!-- Cụm nút hành động -->
-      <div class="space-y-2.5 pt-1">
+      <div class="space-y-2 pt-1">
         <button
           onclick="downloadStoryCard()"
           class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 text-white font-extrabold text-xs sm:text-sm shadow-lg active:scale-95 transition-all"
@@ -191,12 +178,10 @@
     </div>
   </section>
 
-  <!-- Canvas ẩn để xuất ảnh Story 1080x1920 nét căng -->
   <canvas id="export-canvas" width="1080" height="1920" class="hidden"></canvas>
 
   <script>
     const music = document.getElementById("bg-music");
-    let isPlaying = false;
     let isAnimating = false;
 
     function toggleMusic() {
@@ -229,9 +214,7 @@
       if (isAnimating) return;
       isAnimating = true;
 
-      // Phát nhạc Captain Boy ngay khi người dùng chạm
       music.play().then(() => {
-        isPlaying = true;
         document.getElementById("music-btn").classList.remove("hidden");
       }).catch(() => {});
 
@@ -314,7 +297,6 @@
       }, 400);
     }
 
-    // Hiệu ứng pháo hoa nhẹ mượt cho mobile
     function launchFireworks() {
       const canvas = document.getElementById("fx-canvas");
       const ctx = canvas.getContext("2d");
@@ -363,13 +345,33 @@
       animate();
     }
 
-    // Xuất ảnh Story 1080x1920 (tỷ lệ 9:16) để đăng Nhật ký
+    function drawRoundedPhoto(ctx, img, x, y, w, h, r, borderColor) {
+      ctx.save();
+      ctx.beginPath();
+      ctx.roundRect(x - 6, y - 6, w + 12, h + 12, r + 4);
+      ctx.fillStyle = borderColor;
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.roundRect(x, y, w, h, r);
+      ctx.clip();
+      if (img && img.complete && img.naturalWidth > 0) {
+        const scale = Math.max(w / img.naturalWidth, h / img.naturalHeight);
+        const dw = img.naturalWidth * scale;
+        const dh = img.naturalHeight * scale;
+        ctx.drawImage(img, x + (w - dw) / 2, y + (h - dh) / 2, dw, dh);
+      } else {
+        ctx.fillStyle = "#3b0764";
+        ctx.fillRect(x, y, w, h);
+      }
+      ctx.restore();
+    }
+
     function downloadStoryCard() {
       const canvas = document.getElementById("export-canvas");
       const ctx = canvas.getContext("2d");
       const W = 1080, H = 1920;
 
-      // Nền gradient sang trọng
       const bg = ctx.createLinearGradient(0, 0, W, H);
       bg.addColorStop(0, "#12071f");
       bg.addColorStop(0.5, "#240b36");
@@ -377,81 +379,61 @@
       ctx.fillStyle = bg;
       ctx.fillRect(0, 0, W, H);
 
-      // Vòng sáng trang trí
-      const glow = ctx.createRadialGradient(W / 2, 760, 60, W / 2, 760, 520);
+      const glow = ctx.createRadialGradient(W / 2, 820, 60, W / 2, 820, 540);
       glow.addColorStop(0, "rgba(236, 72, 153, 0.32)");
       glow.addColorStop(1, "rgba(236, 72, 153, 0)");
       ctx.fillStyle = glow;
       ctx.fillRect(0, 0, W, H);
 
-      // Khung thẻ trung tâm
       ctx.fillStyle = "rgba(255, 255, 255, 0.07)";
       ctx.strokeStyle = "rgba(244, 114, 182, 0.55)";
       ctx.lineWidth = 4;
       ctx.beginPath();
-      ctx.roundRect(90, 240, 900, 1440, 64);
+      ctx.roundRect(75, 210, 930, 1500, 64);
       ctx.fill();
       ctx.stroke();
 
-      // Tiêu đề trên cùng
       ctx.fillStyle = "#f9a8d4";
       ctx.font = "800 32px 'Be Vietnam Pro', sans-serif";
       ctx.textAlign = "center";
-      ctx.fillText("TIKTOK STREAK MILESTONE • VIP", W / 2, 340);
+      ctx.fillText("TIKTOK STREAK MILESTONE • VIP", W / 2, 305);
 
-      // Số 100 khổng lồ
-      const numGrad = ctx.createLinearGradient(300, 420, 780, 580);
+      const numGrad = ctx.createLinearGradient(300, 380, 780, 540);
       numGrad.addColorStop(0, "#fb923c");
       numGrad.addColorStop(0.5, "#f43f5e");
       numGrad.addColorStop(1, "#c084fc");
       ctx.fillStyle = numGrad;
-      ctx.font = "900 190px 'Be Vietnam Pro', sans-serif";
-      ctx.fillText("100🔥", W / 2, 560);
+      ctx.font = "900 180px 'Be Vietnam Pro', sans-serif";
+      ctx.fillText("100🔥", W / 2, 510);
 
       ctx.fillStyle = "#ffffff";
-      ctx.font = "800 44px 'Be Vietnam Pro', sans-serif";
-      ctx.fillText("DAYS STREAK", W / 2, 635);
+      ctx.font = "800 42px 'Be Vietnam Pro', sans-serif";
+      ctx.fillText("DAYS STREAK", W / 2, 580);
 
-      // Vẽ ảnh tròn ở giữa
-      const img = document.getElementById("couple-photo");
-      const cx = W / 2, cy = 880, radius = 175;
-      ctx.save();
-      ctx.beginPath();
-      ctx.arc(cx, cy, radius + 12, 0, Math.PI * 2);
-      ctx.fillStyle = "#ec4899";
-      ctx.fill();
+      // Vẽ 3 tấm ảnh kỷ niệm ngang hàng
+      const p1 = document.getElementById("photo-1");
+      const p2 = document.getElementById("photo-2");
+      const p3 = document.getElementById("photo-3");
+      drawRoundedPhoto(ctx, p1, 135, 660, 245, 330, 28, "#fb923c");
+      drawRoundedPhoto(ctx, p2, 417, 635, 246, 355, 28, "#ec4899");
+      drawRoundedPhoto(ctx, p3, 700, 660, 245, 330, 28, "#a855f7");
 
-      ctx.beginPath();
-      ctx.arc(cx, cy, radius, 0, Math.PI * 2);
-      ctx.clip();
-      if (img && img.complete && img.naturalWidth > 0) {
-        ctx.drawImage(img, cx - radius, cy - radius, radius * 2, radius * 2);
-      } else {
-        ctx.fillStyle = "#3b0764";
-        ctx.fillRect(cx - radius, cy - radius, radius * 2, radius * 2);
-      }
-      ctx.restore();
-
-      // Tên 2 bạn
       ctx.fillStyle = "#ffffff";
       ctx.font = "700 74px 'Pacifico', cursive";
-      ctx.fillText("Long & Quý Thy", W / 2, 1175);
+      ctx.fillText("Long & Quý Thy", W / 2, 1125);
 
-      // Ngày bắt đầu - kết thúc
       ctx.fillStyle = "#fbcfe8";
       ctx.font = "700 38px 'Be Vietnam Pro', sans-serif";
-      ctx.fillText("08 / 08  ➔  23 / 11", W / 2, 1265);
+      ctx.fillText("08 / 08  ➔  23 / 11", W / 2, 1215);
 
-      // Lời nhắn kỷ niệm
       ctx.fillStyle = "rgba(255, 255, 255, 0.78)";
       ctx.font = "500 32px 'Be Vietnam Pro', sans-serif";
-      ctx.fillText("100 ngày nhắn tin không tắt lửa.", W / 2, 1385);
-      ctx.fillText("Mong chuỗi này sẽ còn kéo dài thật lâu ✨", W / 2, 1440);
+      ctx.fillText("100 ngày nhắn tin không tắt lửa.", W / 2, 1335);
+      ctx.fillText("Mong chuỗi này sẽ còn kéo dài thật lâu ✨", W / 2, 1390);
 
-      // Footer nhỏ
       ctx.fillStyle = "#c084fc";
       ctx.font = "700 28px 'Be Vietnam Pro', sans-serif";
-      ctx.fillText("♪ Chờ Một Người - Captain Boy", W / 2, 1585);
+      ctx.fillText("♪ Chờ Một Người - Captain Boy", W / 2, 1575);
 
       const link = document.createElement("a");
       link.download = "Ky_Niem_Chuoi_100_Long_Thy.png";
