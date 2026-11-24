@@ -69,13 +69,13 @@
     </div>
 
     <div class="relative flex flex-col items-center justify-center my-auto">
-      <div id="flame-ring" class="relative w-52 h-52 rounded-full flex items-center justify-center bg-gradient-to-b from-orange-500/10 to-purple-600/10 border border-white/10">
-        <svg id="flame-svg" viewBox="0 0 120 140" class="w-28 h-32 flame-pulse transition-transform duration-300">
+      <div id="flame-ring" class="relative w-52 h-52 rounded-full flex items-center justify-center bg-gradient-to-b from-orange-500/10 to-purple-600/10 border border-white/10 transition-all duration-500">
+        <svg id="flame-svg" viewBox="0 0 120 140" class="w-28 h-32 flame-pulse transition-transform duration-500">
           <defs>
             <linearGradient id="flameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-              <stop id="grad-stop-1" offset="0%" stop-color="#f97316" />
-              <stop id="grad-stop-2" offset="55%" stop-color="#ef4444" />
-              <stop id="grad-stop-3" offset="100%" stop-color="#fde047" />
+              <stop id="grad-stop-1" offset="0%" stop-color="#9ca3af" />
+              <stop id="grad-stop-2" offset="55%" stop-color="#d1d5db" />
+              <stop id="grad-stop-3" offset="100%" stop-color="#f3f4f6" />
             </linearGradient>
           </defs>
           <path d="M60 8 C60 8 98 44 98 82 C98 109 80 130 60 130 C40 130 22 109 22 82 C22 65 31 50 40 40 C38 54 46 62 52 60 C46 42 54 22 60 8 Z" fill="url(#flameGrad)" />
@@ -85,20 +85,20 @@
 
       <div class="mt-5">
         <div class="flex items-baseline justify-center gap-1.5">
-          <span id="day-counter" class="text-6xl font-black tracking-tighter bg-gradient-to-r from-orange-400 via-rose-400 to-purple-400 bg-clip-text text-transparent">001</span>
+          <span id="day-counter" class="text-6xl font-black tracking-tighter bg-gradient-to-r from-orange-400 via-rose-400 to-purple-400 bg-clip-text text-transparent transition-transform duration-300">001</span>
           <span class="text-sm font-extrabold text-gray-300 uppercase tracking-widest">Ngày</span>
         </div>
-        <p id="stage-status" class="text-xs text-pink-300/90 font-semibold mt-1">
+        <p id="stage-status" class="text-xs text-pink-300/90 font-semibold mt-1.5 min-h-[20px]">
           Ngọn lửa bắt đầu từ 08/08...
         </p>
       </div>
 
-      <!-- 4 Cột mốc chuẩn TikTok: 3 - 10 - 30 - 100 -->
-      <div class="flex items-center justify-center gap-2 mt-4">
-        <span id="badge-3" class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-white/5 text-gray-400 border border-white/10 transition-all">🔥 3</span>
-        <span id="badge-10" class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-white/5 text-gray-400 border border-white/10 transition-all">🧡 10</span>
-        <span id="badge-30" class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-white/5 text-gray-400 border border-white/10 transition-all">❤️‍🔥 30</span>
-        <span id="badge-100" class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-white/5 text-gray-400 border border-white/10 transition-all">💜 100</span>
+      <!-- Đúng 4 Cột mốc chuẩn TikTok: 3 - 10 - 30 - 100 -->
+      <div class="flex items-center justify-center gap-2.5 mt-4">
+        <span id="badge-3" class="px-3 py-1 rounded-full text-xs font-bold bg-white/5 text-gray-400 border border-white/10 transition-all duration-300">🔥 3</span>
+        <span id="badge-10" class="px-3 py-1 rounded-full text-xs font-bold bg-white/5 text-gray-400 border border-white/10 transition-all duration-300">🧡 10</span>
+        <span id="badge-30" class="px-3 py-1 rounded-full text-xs font-bold bg-white/5 text-gray-400 border border-white/10 transition-all duration-300">❤️‍🔥 30</span>
+        <span id="badge-100" class="px-3 py-1 rounded-full text-xs font-bold bg-white/5 text-gray-400 border border-white/10 transition-all duration-300">💜 100</span>
       </div>
     </div>
 
@@ -129,7 +129,6 @@
         </span>
       </div>
 
-      <!-- Khung 3 ảnh kỷ niệm (anh1.png, anh2.png, anh3.png) -->
       <div class="grid grid-cols-3 gap-2 pt-1">
         <div class="aspect-[3/4] rounded-2xl p-0.5 bg-gradient-to-b from-orange-400 to-pink-500 shadow-lg overflow-hidden -rotate-2">
           <img id="photo-1" src="anh1.png" alt="Kỷ niệm 1" class="w-full h-full object-cover rounded-[14px] bg-gray-900" />
@@ -220,7 +219,7 @@
 
     function highlightBadge(id, classes) {
       const el = document.getElementById(id);
-      if (el) el.className = "px-2.5 py-1 rounded-full text-[11px] font-extrabold transition-all scale-110 " + classes;
+      if (el) el.className = "px-3 py-1 rounded-full text-xs font-extrabold transition-all duration-300 scale-115 shadow-lg " + classes;
     }
 
     function startStreakCelebration() {
@@ -238,6 +237,7 @@
       const counterEl = document.getElementById("day-counter");
       const statusEl = document.getElementById("stage-status");
       const flameSvg = document.getElementById("flame-svg");
+      const flameRing = document.getElementById("flame-ring");
       const stop1 = document.getElementById("grad-stop-1");
       const stop2 = document.getElementById("grad-stop-2");
       const stop3 = document.getElementById("grad-stop-3");
@@ -245,36 +245,56 @@
       let day = 1;
       const emberTimer = setInterval(spawnEmber, 90);
 
-      const countTimer = setInterval(() => {
-        day += 1;
+      function stepDay() {
         counterEl.textContent = String(day).padStart(3, "0");
 
+        let nextDelay = 48; // Tốc độ đếm bình thường
+
         if (day === 3) {
+          // Chậm lại tại mốc 3
           statusEl.textContent = "🔥 Mốc 3 ngày: Chính thức lên lửa chuỗi!";
-          flameSvg.style.transform = "scale(1.06)";
-          highlightBadge("badge-3", "bg-amber-500/25 text-amber-300 border border-amber-400/50");
+          stop1.setAttribute("stop-color", "#f59e0b");
+          stop2.setAttribute("stop-color", "#fbbf24");
+          stop3.setAttribute("stop-color", "#fef08a");
+          flameSvg.style.transform = "scale(1.08)";
+          counterEl.style.transform = "scale(1.12)";
+          highlightBadge("badge-3", "bg-amber-500/30 text-amber-300 border border-amber-400");
+          nextDelay = 1100; // Dừng 1.1 giây cho rõ mốc 3
         } else if (day === 10) {
+          // Chậm lại tại mốc 10
           statusEl.textContent = "🧡 Mốc 10 ngày: Lửa Cam rực sáng!";
           stop1.setAttribute("stop-color", "#ea580c");
           stop2.setAttribute("stop-color", "#f97316");
           stop3.setAttribute("stop-color", "#fde047");
-          flameSvg.style.transform = "scale(1.15)";
-          highlightBadge("badge-10", "bg-orange-500/25 text-orange-300 border border-orange-400/50");
+          flameSvg.style.transform = "scale(1.18)";
+          counterEl.style.transform = "scale(1.12)";
+          highlightBadge("badge-10", "bg-orange-500/30 text-orange-300 border border-orange-400");
+          nextDelay = 1100; // Dừng 1.1 giây cho rõ mốc 10
         } else if (day === 30) {
+          // Chậm lại tại mốc 30
           statusEl.textContent = "❤️‍🔥 Mốc 30 ngày: Chuyển sắc Lửa Đỏ cực cháy!";
           stop1.setAttribute("stop-color", "#be123c");
           stop2.setAttribute("stop-color", "#f43f5e");
           stop3.setAttribute("stop-color", "#fda4af");
-          flameSvg.style.transform = "scale(1.25)";
-          highlightBadge("badge-30", "bg-rose-500/25 text-rose-300 border border-rose-400/50");
-        } else if (day >= 100) {
-          clearInterval(countTimer);
+          flameSvg.style.transform = "scale(1.28)";
+          flameRing.style.borderColor = "rgba(244, 63, 94, 0.45)";
+          counterEl.style.transform = "scale(1.12)";
+          highlightBadge("badge-30", "bg-rose-500/30 text-rose-300 border border-rose-400");
+          nextDelay = 1200; // Dừng 1.2 giây cho rõ mốc 30
+        } else if (day >= 92 && day < 100) {
+          // Giảm tốc độ nhẹ những ngày sát 100 để tạo cảm giác hồi hộp
+          counterEl.style.transform = "scale(1)";
+          nextDelay = 110;
+        } else if (day === 100) {
+          // Dừng hẳn tại mốc 100 rực rỡ
           clearInterval(emberTimer);
           stop1.setAttribute("stop-color", "#7e22ce");
           stop2.setAttribute("stop-color", "#ec4899");
           stop3.setAttribute("stop-color", "#f5d0fe");
-          flameSvg.style.transform = "scale(1.36)";
-          highlightBadge("badge-100", "bg-purple-500/30 text-purple-200 border border-purple-400/60");
+          flameSvg.style.transform = "scale(1.4)";
+          flameRing.style.borderColor = "rgba(192, 132, 252, 0.65)";
+          counterEl.style.transform = "scale(1.18)";
+          highlightBadge("badge-100", "bg-purple-500/35 text-purple-200 border border-purple-400");
           statusEl.textContent = "💜 MỐC 100 NGÀY: LỬA TÍM HUYỀN THOẠI (23/11)!";
           launchFireworks();
 
@@ -292,24 +312,35 @@
               launchFireworks();
               isAnimating = false;
             }, 600);
-          }, 1600);
+          }, 2400);
+          return;
+        } else {
+          counterEl.style.transform = "scale(1)";
         }
-      }, 36);
+
+        day += 1;
+        setTimeout(stepDay, nextDelay);
+      }
+
+      stepDay();
     }
 
     function replayEffect() {
       const stage1 = document.getElementById("stage-ignite");
       const stage2 = document.getElementById("stage-card");
       const btn = document.getElementById("ignite-btn");
-      document.getElementById("day-counter").textContent = "001";
+      const counterEl = document.getElementById("day-counter");
+      counterEl.textContent = "001";
+      counterEl.style.transform = "scale(1)";
       document.getElementById("stage-status").textContent = "Ngọn lửa bắt đầu từ 08/08...";
       document.getElementById("flame-svg").style.transform = "scale(1)";
-      document.getElementById("grad-stop-1").setAttribute("stop-color", "#f97316");
-      document.getElementById("grad-stop-2").setAttribute("stop-color", "#ef4444");
-      document.getElementById("grad-stop-3").setAttribute("stop-color", "#fde047");
+      document.getElementById("flame-ring").style.borderColor = "rgba(255, 255, 255, 0.1)";
+      document.getElementById("grad-stop-1").setAttribute("stop-color", "#9ca3af");
+      document.getElementById("grad-stop-2").setAttribute("stop-color", "#d1d5db");
+      document.getElementById("grad-stop-3").setAttribute("stop-color", "#f3f4f6");
 
       ["badge-3", "badge-10", "badge-30", "badge-100"].forEach(id => {
-        document.getElementById(id).className = "px-2.5 py-1 rounded-full text-[11px] font-bold bg-white/5 text-gray-400 border border-white/10 transition-all";
+        document.getElementById(id).className = "px-3 py-1 rounded-full text-xs font-bold bg-white/5 text-gray-400 border border-white/10 transition-all duration-300";
       });
 
       btn.disabled = false;
